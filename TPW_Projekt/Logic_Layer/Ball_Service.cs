@@ -15,6 +15,18 @@ namespace Logic_Layer
         private readonly double canvasWidth;
         private readonly double canvasHeight;
 
+        public Color[] D_colors = new Color[] {
+                ColorsDefinitions.Red,
+                ColorsDefinitions.Green,
+                ColorsDefinitions.Blue,
+                ColorsDefinitions.Yellow,
+                ColorsDefinitions.Orange,
+                ColorsDefinitions.Purple,
+                ColorsDefinitions.Cyan,
+                ColorsDefinitions.Magenta
+            };
+
+
         public Ball_Service(double canvasWidth, double canvasHeight)
         {
             this.canvasWidth = canvasWidth;
@@ -69,18 +81,9 @@ namespace Logic_Layer
 
         private Color GetRandomColor()
         {
-            var colors = new Color[] {
-                ColorsDefinitions.Red, 
-                ColorsDefinitions.Green,
-                ColorsDefinitions.Blue,
-                ColorsDefinitions.Yellow, 
-                ColorsDefinitions.Orange, 
-                ColorsDefinitions.Purple,
-                ColorsDefinitions.Cyan,
-                ColorsDefinitions.Magenta
-            };
+           
 
-            return colors[random.Next(colors.Length)];
+            return D_colors[random.Next(D_colors.Length)];
         }
     }
 }

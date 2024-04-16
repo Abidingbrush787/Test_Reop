@@ -2,7 +2,7 @@
 
 namespace Data_Layer
 {
-    public struct ColorsDefinitions
+    public class ColorsDefinitions
     {
         public static readonly Color Red = Colors.Red;
         public static readonly Color Green = Colors.Green;

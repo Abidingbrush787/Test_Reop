@@ -12,20 +12,9 @@ namespace Logic_Layer_Tests
     [TestFixture]
     public class BallServiceTests
     {
-        private Ball_Service _ballService;
+        public Ball_Service _ballService;
         private double _canvasWidth = 800;
         private double _canvasHeight = 600;
-
-        Color[] colors = new Color[] {
-                ColorsDefinitions.Red,
-                ColorsDefinitions.Green,
-                ColorsDefinitions.Blue,
-                ColorsDefinitions.Yellow,
-                ColorsDefinitions.Orange,
-                ColorsDefinitions.Purple,
-                ColorsDefinitions.Cyan,
-                ColorsDefinitions.Magenta
-            };
 
 
         [SetUp]
@@ -48,7 +37,7 @@ namespace Logic_Layer_Tests
             Assert.That(ball.VelocityX, Is.InRange(-1, 1));
             Assert.That(ball.VelocityX, Is.InRange(-1, 1));
 
-            Assert.That(colors, Contains.Item(ball.Color));
+            Assert.That(_ballService.D_colors, Contains.Item(ball.Color));
 
         }
 
