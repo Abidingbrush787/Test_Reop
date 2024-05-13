@@ -1,0 +1,41 @@
+﻿<Window x:Class="DES_algorithm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DES_algorithm"
+        mc:Ignorable="d"
+        Title="DES Algorithm" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button Content="Wybierz plik" Click="SelectFileButton_Click" HorizontalAlignment="Left" />
+        <Button Content="Wybierz plik" Click="SelectFileButton_Click" HorizontalAlignment="Left" Grid.Row="0"/>
+        <TextBox x:Name="filePathTextBox" Grid.Row="1" Margin="5" IsReadOnly="True" />
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5">
+            <TextBlock Text="Klucz:" VerticalAlignment="Center" Margin="5,0" />
+            <TextBox x:Name="keyTextBox" Width="200" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+            <Button x:Name="encryptButton" Content="Szyfruj" Click="EncryptFile" Margin="10" Width="100" />
+            <Button x:Name="decryptButton" Content="Deszyfruj" Click="DecryptFile" Margin="10" Width="100" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Orientation="Vertical" HorizontalAlignment="Center" Margin="5">
+            <Button x:Name="encryptMessageButton" Content="Szyfruj wiadomość" Click="EncryptMessage_Click" Margin="10" Width="750" />
+            <Button x:Name="decryptMessageButton" Content="Deszyfruj wiadomość" Click="DecryptMessage_Click" Margin="10" Width="750" />
+            <TextBox x:Name="inputMessageTextBox" Margin="5" Height="80" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" TextWrapping="Wrap"/>
+            <TextBox x:Name="outputMessageTextBox" Margin="5" Height="80" VerticalScrollBarVisibility="Auto" IsReadOnly="True" TextWrapping="Wrap"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
